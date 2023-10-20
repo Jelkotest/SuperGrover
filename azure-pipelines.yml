@@ -11,7 +11,7 @@ stages:
   - job: Build
 
     pool:
-      name: Grover-team
+      name: superman
 
     variables:
       solution: '**/*.sln'
@@ -46,7 +46,7 @@ stages:
   jobs:
   - job: Deploy
     pool:
-      name: Grover-team
+      name: superman
 
     steps:
 
@@ -59,8 +59,8 @@ stages:
 
     - task: AzureRmWebAppDeployment@4
       inputs:
-      ConnectionType: 'AzureRM'
-      azureSubscription: 'Azure Pass - Sponsorship(aba85bf6-5ae5-49ab-a48e-77df1fdb61c7)'
-      appType: 'webApp'
-      WebAppName: 'Groverweb'
-      packageForLinux: '$(System.ArtifactsDirectory)/drop/*.zip'
+        ConnectionType: 'AzureRM'
+        azureSubscription: 'Azure Pass - Sponsorship(aba85bf6-5ae5-49ab-a48e-77df1fdb61c7)'
+        appType: 'webApp'
+        WebAppName: 'Groverweb'
+        packageForLinux: '$(System.ArtifactsDirectory)/drop/*.zip'
