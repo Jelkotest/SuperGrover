@@ -11,7 +11,7 @@ stages:
   - job: Build
 
     pool:
-      name: superman
+      name: Grover-team
 
     variables:
       solution: '**/*.sln'
@@ -46,7 +46,7 @@ stages:
   jobs:
   - job: Deploy
     pool:
-      name: superman
+      name: Grover-team
 
     steps:
 
