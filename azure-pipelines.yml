@@ -7,7 +7,7 @@ trigger:
 - master
 
 pool:
-  vmImage: 'windows-latest'
+  name: 'grover-team'
 
 variables:
   solution: '**/*.sln'
