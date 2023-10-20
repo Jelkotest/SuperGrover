@@ -55,11 +55,12 @@ stages:
         buildType: 'current'
         downloadType: 'single'
         artifactName: 'drop'
-        downloadPath: '$(- task: AzureRmWebAppDeployment@4
+        downloadPath: '$(System.ArtifactsDirectory)'
+
+- task: AzureRmWebAppDeployment@4
   inputs:
     ConnectionType: 'AzureRM'
     azureSubscription: 'Azure Pass - Sponsorship(aba85bf6-5ae5-49ab-a48e-77df1fdb61c7)'
     appType: 'webApp'
     WebAppName: 'Groverweb'
-    packageForLinux: '$(System.ArtifactsDirectory)/drop/*.zip')'
-
+    packageForLinux: '$(System.ArtifactsDirectory)/drop/*.zip'
